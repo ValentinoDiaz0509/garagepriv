@@ -1,9 +1,11 @@
 package Clases;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Estacionamiento {
+public class Estacionamiento implements Serializable {
+    private static final long serialVersionUID = 1L;
     private List<String> tickets;
     private List<String> plazas;
     private List<String> empleados;
@@ -60,5 +62,13 @@ public class Estacionamiento {
             System.out.println("No hay plazas de aparcamiento disponibles para asignar al cliente.");
         }
         listaClientes.add(cliente);
+    }
+
+    public void guardar(String archivo) {
+        Persistencia.guardarEstado(this, archivo);
+    }
+
+    public void cargar(String archivo) {
+        Persistencia.cargarEstado(this, archivo);
     }
 }

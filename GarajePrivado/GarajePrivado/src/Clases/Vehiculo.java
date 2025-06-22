@@ -1,6 +1,9 @@
 package Clases;
 
-public class Vehiculo {
+import java.io.Serializable;
+
+public class Vehiculo implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String patente;
     private String marca;
     private String tipo;
