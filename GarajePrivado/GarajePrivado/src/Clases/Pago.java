@@ -1,9 +1,11 @@
 package Clases;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Pago {
+public class Pago implements Serializable {
+    private static final long serialVersionUID = 1L;
     private double monto;
     private String metodoDePago;
     private LocalDateTime fechaDePago;
