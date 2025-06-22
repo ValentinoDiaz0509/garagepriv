@@ -1,9 +1,11 @@
 package Clases;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Ticket {
+public class Ticket implements Serializable {
+    private static final long serialVersionUID = 1L;
     private static int contadorTickets = 0;
     private String idTicket;
     private Vehiculo vehiculo;
