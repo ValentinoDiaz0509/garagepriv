@@ -5,7 +5,7 @@ public class Empleado {
     private int dni; // Considera cambiar a String si es necesario
 
     public Empleado(int dni, String nombre) {
-    	this.dni = dni;
+	this.dni = dni;
         this.nombre = nombre;
     }
 
