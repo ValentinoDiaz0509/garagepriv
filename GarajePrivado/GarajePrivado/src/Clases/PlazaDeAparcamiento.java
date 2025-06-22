@@ -1,6 +1,9 @@
 package Clases;
 
-public class PlazaDeAparcamiento {
+import java.io.Serializable;
+
+public class PlazaDeAparcamiento implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int numero;
     private boolean ocupada;
     private Vehiculo vehiculoEstacionado;
@@ -91,6 +94,16 @@ public class PlazaDeAparcamiento {
             }
         }
         return null; // No hay plazas libres
+    }
+
+    public static PlazaDeAparcamiento[] getPlazas() {
+        return plazas;
+    }
+
+    public static void setPlazas(PlazaDeAparcamiento[] nuevasPlazas) {
+        if (nuevasPlazas != null && nuevasPlazas.length == MAX_PLAZAS) {
+            plazas = nuevasPlazas;
+        }
     }
 
 }

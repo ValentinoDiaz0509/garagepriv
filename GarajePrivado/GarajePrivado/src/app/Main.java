@@ -23,7 +23,9 @@ public class Main {
             System.out.println("8. Ingresar entrada de vehículo (Administrativo)");
             System.out.println("9. Registrar salida de vehículo (Administrativo)");
             System.out.println("10. Ver disponibilidad de plazas (Administrativo)");
-            System.out.println("11. Salir");
+            System.out.println("11. Guardar datos");
+            System.out.println("12. Cargar datos");
+            System.out.println("13. Salir");
             System.out.print("\nSeleccione una opción: ");
             int opcion = Integer.parseInt(scanner.nextLine());
             System.out.println();
@@ -78,6 +80,14 @@ public class Main {
                     administrativo.verDisponibilidadDePlazas();
                     break;
                 case 11:
+                    estacionamiento.guardar("estado.ser");
+                    System.out.println("Datos guardados.");
+                    break;
+                case 12:
+                    estacionamiento.cargar("estado.ser");
+                    System.out.println("Datos cargados.");
+                    break;
+                case 13:
                     System.out.println("¡Hasta luego!");
                     scanner.close();
                     return;
