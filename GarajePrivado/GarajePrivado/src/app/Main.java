@@ -8,6 +8,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Gerente gerente = new Gerente();
         Estacionamiento estacionamiento = new Estacionamiento();
+        estacionamiento.cargarClientes("data/clientes.csv");
+        estacionamiento.cargarTickets("data/tickets.csv");
         Operador operador = new Operador();
         Administrativo administrativo = new Administrativo(1, "Juan Perez");
 
@@ -35,6 +37,7 @@ public class Main {
                 case 2:
                     Ticket ticket = gerente.generarTicket();
                     if (ticket != null) {
+                        estacionamiento.agregarTicket(ticket);
                         System.out.println("\nTicket generado: " + ticket.getIdTicket() + "\n");
                     }
                     break;
@@ -78,6 +81,8 @@ public class Main {
                     administrativo.verDisponibilidadDePlazas();
                     break;
                 case 11:
+                    estacionamiento.guardarClientes("data/clientes.csv");
+                    estacionamiento.guardarTickets("data/tickets.csv");
                     System.out.println("¡Hasta luego!");
                     scanner.close();
                     return;
