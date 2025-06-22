@@ -47,11 +47,11 @@ public class Administrativo extends Empleado {
             return;
         }
 
-        Vehiculo vehiculo = plaza.getVehiculoEstacionado();
-        
-        plaza.desocuparPlaza();
-        
-        System.out.println("Vehículo salió de la plaza.");
+        Vehiculo vehiculo = PlazaDeAparcamiento.desocuparPlaza(plaza.getNumero());
+
+        if (vehiculo != null) {
+            System.out.println("Vehículo " + vehiculo.getPatente() + " salió de la plaza " + plaza.getNumero() + ".");
+        }
     }
 
     
