@@ -117,6 +117,9 @@ public class Administrativo extends Empleado {
         Vehiculo vehiculo = plaza.getVehiculoEstacionado();
  codex/confirm-program-functionality-and-file-handling
         
+ codex/verificar-persistencia-y-guardado-en-archivo-txt
+        PlazaDeAparcamiento.desocuparPlaza(plaza.getNumero());
+=======
         PlazaDeAparcamiento.desocuparPlaza(plaza.getNumero());
 =======
 
@@ -192,6 +195,7 @@ codex/replace-plaza.desocuparplaza-with-static-method
 
 main
         PlazaDeAparcamiento.desocuparPlaza(plaza.getNumero());
+ main
  main
         
         System.out.println("Vehículo salió de la plaza.");

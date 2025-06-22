@@ -186,6 +186,7 @@ codex/implement-datamanager-methods-for-file-handling
                     break;
                 case 11:
                     System.out.println("¡Hasta luego!");
+                    estacionamiento.guardarClientesEnArchivo();
                     scanner.close();
                     return;
                 default:

@@ -1,9 +1,19 @@
+codex/verificar-persistencia-y-guardado-en-archivo-txt
+package Clases;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+=======
 codex/confirm-program-functionality-and-file-handling
 package Clases;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
+ main
 
 public class Estacionamiento {
     private List<String> tickets;
@@ -17,6 +27,7 @@ public class Estacionamiento {
         plazas = new ArrayList<>();
         empleados = new ArrayList<>();
         listaClientes = new ArrayList<>();
+        cargarClientesDesdeArchivo();
     }
 
     // Getters y setters
@@ -53,6 +64,66 @@ public class Estacionamiento {
     }
 
     // Métodos
+ codex/verificar-persistencia-y-guardado-en-archivo-txt
+    public void agregarCliente(Cliente cliente) {
+        PlazaDeAparcamiento plazaLibre = PlazaDeAparcamiento.obtenerPrimeraPlazaLibre();
+        if (plazaLibre != null) {
+            plazaLibre.ocuparPlaza(cliente.getVehiculo());
+            cliente.setNumeroPlaza(plazaLibre.getNumero());
+            System.out.println("Cliente agregado correctamente. Se le asignó la plaza número " + plazaLibre.getNumero());
+        } else {
+            System.out.println("No hay plazas de aparcamiento disponibles para asignar al cliente.");
+        }
+        listaClientes.add(cliente);
+    }
+
+    public void guardarClientesEnArchivo() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("clientes.txt"))) {
+            for (Cliente c : listaClientes) {
+                Vehiculo v = c.getVehiculo();
+                writer.println(c.getNombre() + ";" + c.getDni() + ";" + c.getTelefono() + ";" +
+                        v.getMarca() + ";" + v.getPatente() + ";" + v.getTipo() + ";" + c.getNumeroPlaza());
+            }
+        } catch (IOException e) {
+            System.out.println("Error al guardar clientes: " + e.getMessage());
+        }
+    }
+
+    private void cargarClientesDesdeArchivo() {
+        if (!Files.exists(Paths.get("clientes.txt"))) {
+            return;
+        }
+
+        try (BufferedReader br = new BufferedReader(new FileReader("clientes.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(";");
+                if (parts.length >= 7) {
+                    String nombre = parts[0];
+                    String dni = parts[1];
+                    String telefono = parts[2];
+                    String marca = parts[3];
+                    String patente = parts[4];
+                    String tipo = parts[5];
+                    int numeroPlaza = Integer.parseInt(parts[6]);
+
+                    Vehiculo vehiculo = new Vehiculo(marca, patente, tipo);
+                    Cliente cliente = new Cliente(nombre, dni, telefono, vehiculo);
+                    cliente.setNumeroPlaza(numeroPlaza);
+                    listaClientes.add(cliente);
+
+                    PlazaDeAparcamiento plaza = PlazaDeAparcamiento.obtenerPlazaPorNumero(numeroPlaza);
+                    if (plaza != null && !plaza.estaOcupada()) {
+                        plaza.ocuparPlaza(vehiculo);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error al cargar clientes: " + e.getMessage());
+        }
+    }
+}
+=======
 =======
 package Clases;
 
@@ -232,3 +303,4 @@ main
 }
  main
 main
+ main
