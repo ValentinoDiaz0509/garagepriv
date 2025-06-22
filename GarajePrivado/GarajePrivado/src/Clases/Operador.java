@@ -48,5 +48,6 @@ public class Operador {
         Cliente cliente = new Cliente(nombre, dni, telefono, vehiculo);
 
         estacionamiento.agregarCliente(cliente);
+        DataManager.guardarCliente(cliente);
     }
 }

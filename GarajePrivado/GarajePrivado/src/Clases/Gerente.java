@@ -35,6 +35,8 @@ public class Gerente {
 
         Ticket ticket = new Ticket(vehiculo, plaza, fechaHoraIngreso);
 
+        DataManager.guardarTicket(ticket);
+
         System.out.println("Ticket generado correctamente: " + ticket.getIdTicket());
         return ticket;
     }

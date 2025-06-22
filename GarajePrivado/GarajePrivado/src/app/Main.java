@@ -11,6 +11,9 @@ public class Main {
         Operador operador = new Operador();
         Administrativo administrativo = new Administrativo(1, "Juan Perez");
 
+        DataManager.cargarClientes();
+        DataManager.cargarTickets();
+
         while (true) {
             System.out.println("\n=== MENÚ PRINCIPAL ===");
             System.out.println("1. Registrar cliente");
