@@ -47,8 +47,14 @@ public class Administrativo extends Empleado {
             return;
         }
 
+codex/replace-plaza.desocuparplaza-with-static-method
+        Vehiculo vehiculo = plaza.getVehiculoEstacionado();
+        
+        // Utilizar el método estático para desocupar la plaza
+
         Vehiculo vehiculo = plaza.getVehiculoEstacionado();
 
+main
         PlazaDeAparcamiento.desocuparPlaza(plaza.getNumero());
         
         System.out.println("Vehículo salió de la plaza.");
