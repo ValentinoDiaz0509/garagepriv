@@ -45,5 +45,5 @@ public class Cliente {
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
-    
+
 }

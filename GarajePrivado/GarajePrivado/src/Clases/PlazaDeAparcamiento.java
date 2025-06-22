@@ -37,7 +37,7 @@ public class PlazaDeAparcamiento {
     }
 
     // Métodos de gestión
-    
+
     public void ocuparPlaza(Vehiculo vehiculo) {
         this.vehiculoEstacionado = vehiculo;
         this.ocupada = true;
@@ -76,14 +76,14 @@ public class PlazaDeAparcamiento {
             }
         }
     }
-    
-    
+
+
     public static PlazaDeAparcamiento obtenerPlazaPorNumero(int numero) {
         if (numero < 1 || numero > MAX_PLAZAS) return null;
         return plazas[numero - 1];
-        
+
     }
-    
+
     public static PlazaDeAparcamiento obtenerPrimeraPlazaLibre() {
         for (PlazaDeAparcamiento plaza : plazas) {
             if (!plaza.estaOcupada()) {

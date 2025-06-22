@@ -6,7 +6,7 @@ public class Vehiculo {
     private String tipo;
 
     // Constructor
-    public Vehiculo(String marca, String patente, String tipo) { 
+    public Vehiculo(String marca, String patente, String tipo) {
         this.marca = marca;
         this.patente = patente;
         this.tipo = tipo;

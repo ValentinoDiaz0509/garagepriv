@@ -11,7 +11,7 @@ public class Administrativo extends Empleado {
 
     // ingresarEntradaDeVehiculos toma como parámetro plaza y vehiculo.
     public void ingresarEntradaDeVehiculos(PlazaDeAparcamiento plaza, Vehiculo vehiculo) {
-        
+
 
         if (plaza == null) {
             System.out.println("Error: No hay una plaza de aparcamiento.");
@@ -32,10 +32,10 @@ public class Administrativo extends Empleado {
         System.out.println("Vehículo " + vehiculo.getPatente() + " ingresado en la plaza " + plaza.getNumero() + ".");
     }
 
-    
-    
+
+
     public void registrarSalidaDeVehiculos(PlazaDeAparcamiento plaza) {
-        
+
 
         if (plaza == null) {
             System.out.println("Error: No se indicó una plaza de aparcamiento.");
@@ -48,17 +48,17 @@ public class Administrativo extends Empleado {
         }
 
         Vehiculo vehiculo = plaza.getVehiculoEstacionado();
-        
+
         plaza.desocuparPlaza();
-        
+
         System.out.println("Vehículo salió de la plaza.");
     }
 
-    
-    
+
+
     // verDisponibilidadDePlazas revisa el estado de una plaza
     public void verDisponibilidadDePlazas() {
-    	PlazaDeAparcamiento.mostrarEstadoPlazas();
+	PlazaDeAparcamiento.mostrarEstadoPlazas();
     }
-    
+
 }
