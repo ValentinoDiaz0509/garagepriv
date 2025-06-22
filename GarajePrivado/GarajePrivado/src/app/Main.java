@@ -8,6 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Gerente gerente = new Gerente();
         Estacionamiento estacionamiento = new Estacionamiento();
+        estacionamiento.cargarClientesDesdeArchivo("clientes.txt");
         Operador operador = new Operador();
         Administrativo administrativo = new Administrativo(1, "Juan Perez");
 
@@ -79,6 +80,7 @@ public class Main {
                     break;
                 case 11:
                     System.out.println("¡Hasta luego!");
+                    estacionamiento.guardarClientesEnArchivo("clientes.txt");
                     scanner.close();
                     return;
                 default:
