@@ -6,12 +6,14 @@ public class Cliente {
     private String dni;
     private String telefono;
     private Vehiculo vehiculo;
+    private int numeroPlaza;
 
     public Cliente(String nombre, String dni, String telefono, Vehiculo vehiculo) {
         this.nombre = nombre;
         this.dni = dni;
         this.telefono = telefono;
         this.vehiculo = vehiculo;
+        this.numeroPlaza = 0;
     }
 
     public String getNombre() {
@@ -44,6 +46,14 @@ public class Cliente {
 
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
+    }
+
+    public int getNumeroPlaza() {
+        return numeroPlaza;
+    }
+
+    public void setNumeroPlaza(int numeroPlaza) {
+        this.numeroPlaza = numeroPlaza;
     }
     
 }

@@ -79,6 +79,7 @@ public class Main {
                     break;
                 case 11:
                     System.out.println("¡Hasta luego!");
+                    estacionamiento.guardarClientesEnArchivo();
                     scanner.close();
                     return;
                 default:

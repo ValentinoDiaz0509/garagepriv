@@ -2,6 +2,9 @@ package Clases;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Ticket {
     private static int contadorTickets = 0;
@@ -12,9 +15,14 @@ public class Ticket {
     private LocalDateTime fechaHoraSalida;
     private double monto;
 
+    static {
+        cargarContador();
+    }
+
     // Constructor
     public Ticket(Vehiculo vehiculo, PlazaDeAparcamiento plazaDeAparcamiento, LocalDateTime fechaHoraIngreso) {
         this.idTicket = "TICKET-" + (++contadorTickets);
+        guardarContador();
         this.vehiculo = vehiculo;
         this.plazaDeAparcamiento = plazaDeAparcamiento;
         this.fechaHoraIngreso = fechaHoraIngreso;
@@ -75,5 +83,24 @@ public class Ticket {
 
         System.out.println("Horas completas estacionado: " + horasCompletasEstacionado + ". Monto calculado: $" + this.monto);
         return this.monto;
+    }
+
+    private static void cargarContador() {
+        try {
+            if (Files.exists(Paths.get("ticket_counter.txt"))) {
+                String s = new String(Files.readAllBytes(Paths.get("ticket_counter.txt"))).trim();
+                contadorTickets = Integer.parseInt(s);
+            }
+        } catch (IOException | NumberFormatException e) {
+            contadorTickets = 0;
+        }
+    }
+
+    private static void guardarContador() {
+        try {
+            Files.write(Paths.get("ticket_counter.txt"), String.valueOf(contadorTickets).getBytes());
+        } catch (IOException e) {
+            System.out.println("Error al guardar contador de tickets: " + e.getMessage());
+        }
     }
 }
