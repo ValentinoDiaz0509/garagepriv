@@ -3,6 +3,10 @@ package app;
 
 import Clases.*;
 import java.util.Scanner;
+import service.ParkingEntryService;
+import service.ParkingExitService;
+import service.impl.ParkingEntryServiceImpl;
+import service.impl.ParkingExitServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +16,10 @@ package app;
 
 import Clases.*;
 import java.util.Scanner;
+import service.ParkingEntryService;
+import service.ParkingExitService;
+import service.impl.ParkingEntryServiceImpl;
+import service.impl.ParkingExitServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +29,8 @@ public class Main {
         estacionamiento.cargarClientesDesdeArchivo("clientes.txt");
         Operador operador = new Operador();
         Administrativo administrativo = new Administrativo(1, "Juan Perez");
+        ParkingEntryService parkingEntryService = new ParkingEntryServiceImpl();
+        ParkingExitService parkingExitService = new ParkingExitServiceImpl();
 
         while (true) {
             System.out.println("\n=== MENÚ PRINCIPAL ===");
@@ -77,13 +87,13 @@ public class Main {
                     System.out.print("Ingrese tipo de vehículo: ");
                     String tipoEntrada = scanner.nextLine();
                     Vehiculo vehiculoEntrada = new Vehiculo(marcaEntrada, patenteEntrada, tipoEntrada);
-                    administrativo.ingresarEntradaDeVehiculos(plazaEntrada, vehiculoEntrada);
+                    parkingEntryService.ingresarVehiculo(plazaEntrada, vehiculoEntrada);
                     break;
                 case 9:
                     System.out.print("Ingrese número de plaza: ");
                     int numPlazaSalida = Integer.parseInt(scanner.nextLine());
                     PlazaDeAparcamiento plazaSalida = PlazaDeAparcamiento.obtenerPlazaPorNumero(numPlazaSalida);
-                    administrativo.registrarSalidaDeVehiculos(plazaSalida);
+                    parkingExitService.registrarSalida(plazaSalida);
                     break;
                 case 10:
                     administrativo.verDisponibilidadDePlazas();
