@@ -18,9 +18,9 @@ public class DataManager {
 
     public static void guardarCliente(Cliente cliente) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(CLIENTES_FILE, true))) {
-            Vehiculo v = cliente.getVehiculo();
-            writer.write(cliente.getNombre() + "," + cliente.getDni() + "," + cliente.getTelefono()
-                    + "," + v.getMarca() + "," + v.getPatente() + "," + v.getTipo());
+            Vehiculo v = cliente.vehiculo();
+            writer.write(cliente.nombre() + "," + cliente.dni() + "," + cliente.telefono()
+                    + "," + v.marca() + "," + v.patente() + "," + v.tipo());
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -29,9 +29,9 @@ public class DataManager {
 
     public static void guardarTicket(Ticket ticket) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(TICKETS_FILE, true))) {
-            Vehiculo v = ticket.getVehiculo();
-            writer.write(ticket.getIdTicket() + "," + v.getMarca() + "," + v.getPatente() + "," + v.getTipo()
-                    + "," + ticket.getPlazaDeAparcamiento().getNumero() + "," + ticket.getFechaHoraIngreso().toString());
+            Vehiculo v = ticket.vehiculo();
+            writer.write(ticket.getIdTicket() + "," + v.marca() + "," + v.patente() + "," + v.tipo()
+                    + "," + ticket.getPlazaDeAparcamiento().numero() + "," + ticket.getFechaHoraIngreso().toString());
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
