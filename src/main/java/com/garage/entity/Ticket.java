@@ -1,5 +1,5 @@
 codex/verificar-persistencia-y-guardado-en-archivo-txt
-package Clases;
+package com.garage.entity;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -20,7 +20,7 @@ public class Ticket {
         cargarContador();
     }
 =======
-package Clases;
+package com.garage.entity;
 
  codex/convert-.java-files-to-lf-endings
 import java.time.LocalDateTime;

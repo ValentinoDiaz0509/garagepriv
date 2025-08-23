@@ -1,8 +1,8 @@
  codex/verificar-persistencia-y-guardado-en-archivo-txt
-package Clases;
+package com.garage.entity;
 
 =======
-package Clases;
+package com.garage.entity;
 
  codex/convert-.java-files-to-lf-endings
  main

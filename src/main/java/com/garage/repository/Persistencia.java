@@ -1,5 +1,7 @@
-package Clases;
+package com.garage.repository;
 
+import com.garage.entity.*;
+import com.garage.service.*;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

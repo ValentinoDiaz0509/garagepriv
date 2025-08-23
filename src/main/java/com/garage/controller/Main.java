@@ -1,16 +1,20 @@
 codex/implement-datamanager-methods-for-file-handling
-package app;
+package com.garage.controller;
 
-import Clases.*;
+import com.garage.entity.*;
+import com.garage.service.*;
+import com.garage.repository.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 =======
 codex/convert-.java-files-to-lf-endings
-package app;
+package com.garage.controller;
 
-import Clases.*;
+import com.garage.entity.*;
+import com.garage.service.*;
+import com.garage.repository.*;
 import java.util.Scanner;
 
 public class Main {
@@ -100,9 +104,11 @@ public class Main {
     }
 }
 =======
-package app;
+package com.garage.controller;
 
-import Clases.*;
+import com.garage.entity.*;
+import com.garage.service.*;
+import com.garage.repository.*;
 import java.util.Scanner;
 
 public class Main {

@@ -1,6 +1,8 @@
 codex/update-plaza-desocuparplaza-call
-package Clases;
+package com.garage.service;
 
+import com.garage.entity.*;
+import com.garage.repository.*;
 import java.util.List;
 
 public class Administrativo extends Empleado {
@@ -65,7 +67,7 @@ public class Administrativo extends Empleado {
 }
 =======
 codex/convert-.java-files-to-lf-endings
-package Clases;
+package com.garage.service;
 
 import java.util.List;
 
@@ -137,7 +139,7 @@ public class Administrativo extends Empleado {
 
 }
 =======
-package Clases;
+package com.garage.service;
 
 import java.util.List;
 

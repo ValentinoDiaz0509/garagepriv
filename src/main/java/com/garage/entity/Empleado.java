@@ -1,4 +1,4 @@
-package Clases;
+package com.garage.entity;
 
 public class Empleado {
     private String nombre;

@@ -1,6 +1,8 @@
 codex/implement-datamanager-methods-for-file-handling
-package Clases;
+package com.garage.service;
 
+import com.garage.entity.*;
+import com.garage.repository.*;
 import java.util.Scanner;
 
 public class Operador {
@@ -53,7 +55,7 @@ public class Operador {
     }
 }
 =======
-package Clases;
+package com.garage.service;
 
 import java.util.Scanner;
 
