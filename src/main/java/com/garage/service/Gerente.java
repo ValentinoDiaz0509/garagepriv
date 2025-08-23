@@ -1,6 +1,8 @@
 codex/implement-datamanager-methods-for-file-handling
-package Clases;
+package com.garage.service;
 
+import com.garage.entity.*;
+import com.garage.repository.*;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
@@ -69,7 +71,7 @@ public class Gerente {
     }
 }
 =======
-package Clases;
+package com.garage.service;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;

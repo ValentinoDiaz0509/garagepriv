@@ -1,4 +1,4 @@
-package Clases;
+package com.garage.entity;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Clases;
+package com.garage.entity;
 
  codex/convert-.java-files-to-lf-endings
 public class PlazaDeAparcamiento {

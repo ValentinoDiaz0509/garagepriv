@@ -1,6 +1,8 @@
 codex/verificar-persistencia-y-guardado-en-archivo-txt
-package Clases;
+package com.garage.service;
 
+import com.garage.entity.*;
+import com.garage.repository.*;
 codex/implement-file-save/load-for-cliente-and-ticket
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 =======
 codex/confirm-program-functionality-and-file-handling
-package Clases;
+package com.garage.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -227,7 +229,7 @@ codex/implement-file-save/load-for-cliente-and-ticket
 }
 =======
 =======
-package Clases;
+package com.garage.service;
 
 codex/convert-.java-files-to-lf-endings
 import java.util.ArrayList;
