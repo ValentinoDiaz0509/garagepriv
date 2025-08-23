@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import com.garage.exception.PersistenceException;
+
 /**
  * Utilidades para guardar y cargar el estado del estacionamiento.
  */
@@ -16,7 +18,7 @@ public class Persistencia {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
             oos.writeObject(estado);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new PersistenceException("Error al guardar el estado", e);
         }
     }
 
@@ -26,7 +28,7 @@ public class Persistencia {
             est.setListaClientes(estado.getClientes());
             PlazaDeAparcamiento.setPlazas(estado.getPlazas());
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new PersistenceException("Error al cargar el estado", e);
         }
     }
 }

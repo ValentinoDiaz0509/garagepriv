@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.garage.exception.DataAccessException;
+
 public class DataManager {
     private static final String CLIENTES_FILE = "clientes.txt";
     private static final String TICKETS_FILE = "tickets.txt";
@@ -23,7 +25,7 @@ public class DataManager {
                     + "," + v.getMarca() + "," + v.getPatente() + "," + v.getTipo());
             writer.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new DataAccessException("Error al guardar el cliente", e);
         }
     }
 
@@ -34,7 +36,7 @@ public class DataManager {
                     + "," + ticket.getPlazaDeAparcamiento().getNumero() + "," + ticket.getFechaHoraIngreso().toString());
             writer.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new DataAccessException("Error al guardar el ticket", e);
         }
     }
 
@@ -53,7 +55,7 @@ public class DataManager {
                     }
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new DataAccessException("Error al cargar los clientes", e);
             }
         }
         return clientes;
@@ -77,7 +79,7 @@ public class DataManager {
                     }
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new DataAccessException("Error al cargar los tickets", e);
             }
         }
         return tickets;
